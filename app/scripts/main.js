@@ -4,7 +4,7 @@ var inputSplit = null,
     enlightenment = [],
     codeParser = [],
 
-    _utility = function(allLetters, find){
+    _utility = function(allLetters, find) {
         found = allLetters.indexOf(find);
         obfuscation.push(found);
     },
@@ -13,9 +13,9 @@ var inputSplit = null,
         window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
     },
 
-    e = function(optional){
+    e = function(optional) {
 
-        if(typeof optional === 'undefined') {
+        if (typeof optional === 'undefined') {
             var message = prompt('Enter a word or string of words for encryption');
             inputSplit = message.split('');
         } else {
@@ -27,11 +27,12 @@ var inputSplit = null,
             _utility(alphabet, inputSplit[i]);
         }
         console.log(obfuscation)
-        return _clipBoard(obfuscation)
+        // return _clipBoard(obfuscation)
+        $('#decryptBox').val(obfuscation)
     },
 
-    d = function(optional){
-        if(typeof optional === 'undefined') {
+    d = function(optional) {
+        if (typeof optional === 'undefined') {
             var message = prompt('What would you like decrypted?')
             codeParser = message.split(',');
         } else {
@@ -46,9 +47,18 @@ var inputSplit = null,
         }
         decryption = enlightenment.join('');
         console.log(decryption)
+        $('#encryptBox').val(decryption);
 
         inputSplit = null;
         obfuscation = [];
         enlightenment = [];
         codeParser = [];
-    }
+    };
+
+$('body')
+    .on('click', '.encryptBtn', function(){
+        e($('#encryptBox').val())
+    })
+    .on('click', '.decryptBtn', function(){
+        d($('#decryptBox').val())
+    })
