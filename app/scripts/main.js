@@ -1,8 +1,10 @@
 var inputSplit = null,
-    alphabet = ' abcdefghijklmnopqrstuvwxyz'.split(''),
+    alphabet = ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"/123456789'.split(''),
     obfuscation = [],
     enlightenment = [],
     codeParser = [],
+
+    // http://facebook.com
 
     _utility = function(allLetters, find) {
         found = allLetters.indexOf(find);
