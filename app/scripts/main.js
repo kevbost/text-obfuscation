@@ -1,5 +1,5 @@
 var inputSplit = null,
-    alphabet = ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"/123456789'.split(''),
+    alphabet = ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"\=/123456789'.split(''),
     obfuscation = [],
     enlightenment = [],
     codeParser = [],
