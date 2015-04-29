@@ -11,6 +11,29 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $gray-lighter;
+}
+
+$border: 1px solid $gray-lighter;
+
 textarea {
-    min-height: 200px;
+    min-height: 100px;
+}
+
+section {
+    border: $border;
+    padding: 2em;
+    background-color: white;
+    margin-top: 1em;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin: 0 0 1em;
+    text-align: center;
 }
