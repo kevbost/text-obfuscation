@@ -1,5 +1,5 @@
 var _library = {
-    alphabet: ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"\=\™/1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+    alphabet: ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"\=\™\-/1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     inputSplit: null,
     decryption: null,
     obfuscation: [],
