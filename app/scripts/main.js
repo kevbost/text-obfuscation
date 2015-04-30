@@ -1,69 +1,90 @@
-    var alphabet = ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"\=\™/1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    var inputSplit = null;
-    var obfuscation = [];
-    var enlightenment = [];
-    var codeParser = [];
+var _library = {
+    alphabet: ' abcdefghijklmnopqrstuvwxyz.\'\,\?\!\;\:\"\=\™/1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+    inputSplit: null,
+    decryption: null,
+    obfuscation: [],
+    enlightenment: [],
+    codeParser: []
+};
 
-var ArrayPos = (function(){
-    // 'use strict';
+var _clear = function(){
+    'use strict';
+    _library.inputSplit = null;
+    _library.decryption = null;
+    _library.obfuscation = [];
+    _library.enlightenment = [];
+    _library.codeParser = [];
+};
 
-        this._utility = function(allLetters, find) {
-            var found = allLetters.indexOf(find);
-            obfuscation.push(found);
-        };
+var ArrayPos = {
 
-        this._clipBoard = function(text) {
+        _init: function(input, find) {
+            'use strict';
+
+            var found = input.indexOf(find);
+            _library.obfuscation.push(found);
+        },
+
+        _clipBoard: function(text) {
+            'use strict';
+
             window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
-        };
+        },
 
-        this.ae = function(optional) {
-            var that = this;
+        ae: function(optional) {
+            'use strict';
+
             if (typeof optional === 'undefined') {
                 var message = window.prompt('Enter a word or string of words for encryption');
-                inputSplit = message.split('');
+                _library.inputSplit = message.split('');
             } else {
-                inputSplit = optional.split('');
+                _library.inputSplit = optional.split('');
             }
 
-            obfuscation = [];
-            for (var i = 0; i < inputSplit.length; i++) {
-                this._utility(alphabet, inputSplit[i]);
+            for (var i = 0; i < _library.inputSplit.length; i++) {
+                this._init(_library.alphabet, _library.inputSplit[i]);
             }
-            window.console.log(obfuscation);
-            // return _clipBoard(obfuscation)
-            $('#arrayDecryptBox').val(obfuscation);
-        };
 
-        this.ad = function(optional) {
+            window.console.log(_library.obfuscation);
+
+            $('#arrayDecryptBox').val(_library.obfuscation);
+
+            _clear();
+        },
+
+        ad: function(optional) {
+            'use strict';
 
             if (typeof optional === 'undefined') {
                 var message = window.prompt('What would you like decrypted?');
-                codeParser = message.split(',');
+                _library.codeParser = message.split(',');
             } else {
-                codeParser = optional.split(',');
+                _library.codeParser = optional.split(',');
             }
 
             var parsed = [];
-            for (var i = 0; i < codeParser.length; i++) {
-                parsed.push(parseInt(codeParser[i]));
+            for (var i = 0; i < _library.codeParser.length; i++) {
+                parsed.push(parseInt(_library.codeParser[i]));
             }
 
-            for (var i = 0; i < parsed.length; i++) {
-                enlightenment.push(alphabet[parsed[i]]);
+            for (var j = 0; j < parsed.length; j++) {
+                _library.enlightenment.push(_library.alphabet[parsed[j]]);
             }
 
-            var decryption = enlightenment.join('');
-            window.console.log(decryption);
-            $('#arrayEncryptBox').val(decryption);
+            _library.decryption = _library.enlightenment.join('');
+            window.console.log(_library.decryption);
 
-            inputSplit = null;
-            obfuscation = [];
-            enlightenment = [];
-            codeParser = [];
-        };
 
-    return this;
-})();
+            $('#arrayEncryptBox').val(_library.decryption);
+
+            _clear();
+        }
+};
+
+
+var CharCode = {
+
+};
 
 
 $('body')
@@ -74,4 +95,5 @@ $('body')
     .on('click', '.decryptBtn', function(){
         'use strict';
         ArrayPos.ad($('#arrayDecryptBox').val());
-    });
+    })
+;
