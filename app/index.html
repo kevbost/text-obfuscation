@@ -41,20 +41,20 @@
                 <div class="col-xs-6">
                     <form>
                         <div class="form-group">
-                            <label class="pull-right" for="encryptBox">Encrypt</label>
+                            <label class="pull-right" for="arrayEncryptBox">Encrypt</label>
                             <textarea type="tetxarea" class="form-control" id="arrayEncryptBox" placeholder="Enter text to encrypt"></textarea>
                         </div>
-                      <div class="encryptBtn btn btn-default pull-right">Encrypt</div>
+                      <div class="arrayEncryptBtn btn btn-default pull-right">Encrypt</div>
                     </form>
                 </div>
 
                 <div class="col-xs-6">
                     <form>
                         <div class="form-group">
-                            <label for="decryptBox">Decrypt</label>
+                            <label for="arrayDecryptBox">Decrypt</label>
                              <textarea type="tetxarea" class="form-control" id="arrayDecryptBox" placeholder="Enter text to decrypt"></textarea>
                         </div>
-                      <div class="decryptBtn btn btn-default">Decrypt</div>
+                      <div class="arrayDecryptBtn btn btn-default">Decrypt</div>
                     </form>
                 </div>
             </div>
@@ -62,33 +62,65 @@
 
 
 
-        <section class="charCode hidden">
+        <section class="charCode">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-title">
-                        TEMPORARY PLACEHOLDER
+                        inputValue.CharCodeAt()
                     </div>
                     <div class="section-body">
-                        <p></p>
+                        <p>This function has the ability to take in any known character. It works by converting each character into it's unicode equivalent up to value 65536 (<code>0x65536</code>). The values from 65536 (<code>0x65536</code>) to 1114111 (<code>0x10FFFF</code>) are unavailable using this method.  <br />From MDN: <code>"This is because the higher code points are represented by a pair of (lower valued) "surrogate" pseudo-characters which are used to comprise the real character."</code></p>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <form>
                         <div class="form-group">
-                            <label class="pull-right" for="encryptBox">Encrypt</label>
-                            <textarea type="tetxarea" class="form-control" id="encryptBox" placeholder="Enter text to encrypt"></textarea>
+                            <label class="pull-right" for="charEncryptBox">Encrypt</label>
+                            <textarea type="tetxarea" class="form-control" id="charEncryptBox" placeholder="Enter text to encrypt"></textarea>
                         </div>
-                      <div class="encryptBtn btn btn-default pull-right">Encrypt</div>
+                      <div class="charEncryptBtn btn btn-default pull-right">Encrypt</div>
                     </form>
                 </div>
 
                 <div class="col-xs-6">
                     <form>
                         <div class="form-group">
-                            <label for="decryptBox">Decrypt</label>
-                             <textarea type="tetxarea" class="form-control" id="decryptBox" placeholder="Enter text to decrypt"></textarea>
+                            <label for="charDecryptBox">Decrypt</label>
+                             <textarea type="tetxarea" class="form-control" id="charDecryptBox" placeholder="Enter text to decrypt"></textarea>
                         </div>
-                      <div class="decryptBtn btn btn-default">Decrypt</div>
+                      <div class="charDecryptBtn btn btn-default">Decrypt</div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="charCodeMaths">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        Maths
+                    </div>
+                    <div class="section-body">
+                        <p>Same function as inputValue.charCodeAt(), but the resulting character code is run through an equation to obfuscate, then backwards to de-obfuscate.</p>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <form>
+                        <div class="form-group">
+                            <label class="pull-right" for="charMathsEncryptBox">Encrypt</label>
+                            <textarea type="tetxarea" class="form-control" id="charMathsEncryptBox" placeholder="Enter text to encrypt"></textarea>
+                        </div>
+                      <div class="charMathsEncryptBtn btn btn-default pull-right">Encrypt</div>
+                    </form>
+                </div>
+
+                <div class="col-xs-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="charMathsDecryptBox">Decrypt</label>
+                             <textarea type="tetxarea" class="form-control" id="charMathsDecryptBox" placeholder="Enter text to decrypt"></textarea>
+                        </div>
+                      <div class="charMathsDecryptBtn btn btn-default">Decrypt</div>
                     </form>
                 </div>
             </div>
@@ -104,18 +136,7 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
         <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
